@@ -23,8 +23,8 @@ model Music {
 }
 
 enum UserType {
-  ADMIN
-  USUARIO
+  Admin
+  Usuario
 }
 
 model User{
@@ -32,18 +32,18 @@ model User{
   name String @db.VarChar(50)
   user String @unique
   email String @unique
-  Type UserType
+  type UserType
   dateBorn DateTime @db.Date
-  dateRegister DateTime @default(now()) @db.Timestamp(6)
+  dateRegister DateTime @default(now())
 }
 
-model Produto {
-  id	Int	@id @db.MediumInt
+model Product {
+  id	Int	@id @default(autoincrement())
   name String @db.VarChar(50)
   description	String	@db.Text
   price	Decimal		@db.Decimal(8,2)
   assessment Decimal @db.Decimal()
-  login	DateTime	@default(now()) @db.Timestamp
+  dateRegister	DateTime	@default(now())
 }
 
 
